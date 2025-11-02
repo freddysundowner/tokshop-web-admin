@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 0 0% 100%;
+  --foreground: 0 0% 9%;
+  --card: 0 0% 100%;
+  --card-foreground: 0 0% 9%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 0 0% 9%;
+  --primary: 173 58% 39%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 0 0% 96%;
+  --secondary-foreground: 0 0% 9%;
+  --muted: 0 0% 96%;
+  --muted-foreground: 0 0% 45%;
+  --accent: 0 0% 96%;
+  --accent-foreground: 0 0% 9%;
+  --destructive: 0 85% 60%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 0 0% 90%;
+  --input: 0 0% 90%;
+  --ring: 173 58% 39%;
+  --live: 0 90% 60%;
+  --auction-timer: 25 100% 55%;
+  --success: 145 70% 50%;
+  --chart-1: 173 58% 39%;
+  --chart-2: 25 100% 55%;
+  --chart-3: 0 90% 60%;
+  --chart-4: 145 70% 50%;
+  --chart-5: 280 70% 60%;
+  --sidebar: 0 0% 100%;
+  --sidebar-foreground: 0 0% 9%;
+  --sidebar-primary: 173 58% 39%;
+  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-accent: 0 0% 96%;
+  --sidebar-accent-foreground: 0 0% 9%;
+  --sidebar-border: 0 0% 90%;
+  --sidebar-ring: 173 58% 39%;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-serif: Georgia, serif;
+  --font-mono: Menlo, monospace;
+  --radius: 0.5rem;
+  --shadow-2xs: 0px 2px 0px 0px hsl(0, 0%, 0%, 0.10);
+  --shadow-xs: 0px 2px 0px 0px hsl(0, 0%, 0%, 0.10);
+  --shadow-sm: 0px 2px 0px 0px hsl(0, 0%, 0%, 0.10), 0px 1px 2px -1px hsl(0, 0%, 0%, 0.10);
+  --shadow: 0px 2px 0px 0px hsl(0, 0%, 0%, 0.10), 0px 1px 2px -1px hsl(0, 0%, 0%, 0.10);
+  --shadow-md: 0px 2px 0px 0px hsl(0, 0%, 0%, 0.15), 0px 2px 4px -1px hsl(0, 0%, 0%, 0.15);
+  --shadow-lg: 0px 2px 0px 0px hsl(0, 0%, 0%, 0.20), 0px 4px 6px -1px hsl(0, 0%, 0%, 0.20);
+  --shadow-xl: 0px 2px 0px 0px hsl(0, 0%, 0%, 0.25), 0px 8px 10px -1px hsl(0, 0%, 0%, 0.25);
+  --shadow-2xl: 0px 2px 0px 0px hsl(0, 0%, 0%, 0.30);
+  --tracking-normal: 0em;
+  --spacing: 0.25rem;
+}
+
+.dark {
+  --background: 0 0% 9%;
+  --foreground: 0 0% 98%;
+  --card: 0 0% 12%;
+  --card-foreground: 0 0% 98%;
+  --popover: 0 0% 12%;
+  --popover-foreground: 0 0% 98%;
+  --primary: 173 58% 39%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 0 0% 14%;
+  --secondary-foreground: 0 0% 98%;
+  --muted: 0 0% 14%;
+  --muted-foreground: 0 0% 65%;
+  --accent: 0 0% 14%;
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 85% 60%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 0 0% 20%;
+  --input: 0 0% 20%;
+  --ring: 173 58% 39%;
+  --live: 0 90% 60%;
+  --auction-timer: 25 100% 55%;
+  --success: 145 70% 50%;
+  --chart-1: 173 58% 39%;
+  --chart-2: 25 100% 55%;
+  --chart-3: 0 90% 60%;
+  --chart-4: 145 70% 50%;
+  --chart-5: 280 70% 60%;
+  --sidebar: 0 0% 9%;
+  --sidebar-foreground: 0 0% 95%;
+  --sidebar-primary: 173 58% 39%;
+  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-accent: 0 0% 14%;
+  --sidebar-accent-foreground: 0 0% 98%;
+  --sidebar-border: 0 0% 20%;
+  --sidebar-ring: 173 58% 39%;
+}
+
+@layer base {
+  * {
+    @apply border-gray-200;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+
+  /* Remove yellow autofill highlight */
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active,
+  textarea:-webkit-autofill,
+  textarea:-webkit-autofill:hover,
+  textarea:-webkit-autofill:focus,
+  textarea:-webkit-autofill:active,
+  select:-webkit-autofill,
+  select:-webkit-autofill:hover,
+  select:-webkit-autofill:focus,
+  select:-webkit-autofill:active {
+    -webkit-text-fill-color: hsl(var(--foreground)) !important;
+    -webkit-box-shadow: 0 0 0 1000px hsl(var(--background)) inset !important;
+    box-shadow: 0 0 0 1000px hsl(var(--background)) inset !important;
+    transition: background-color 5000s ease-in-out 0s;
+  }
+
+  /* For dark backgrounds (like dialogs) */
+  .dark input:-webkit-autofill,
+  .dark input:-webkit-autofill:hover,
+  .dark input:-webkit-autofill:focus,
+  .dark input:-webkit-autofill:active,
+  .dark textarea:-webkit-autofill,
+  .dark textarea:-webkit-autofill:hover,
+  .dark textarea:-webkit-autofill:focus,
+  .dark textarea:-webkit-autofill:active {
+    -webkit-text-fill-color: hsl(var(--foreground)) !important;
+    -webkit-box-shadow: 0 0 0 1000px hsl(var(--input)) inset !important;
+    box-shadow: 0 0 0 1000px hsl(var(--input)) inset !important;
+  }
+}
+
+@layer utilities {
+  .hover-elevate {
+    @apply transition-colors duration-200;
+  }
+  
+  .hover-elevate:hover {
+    @apply brightness-95;
+  }
+  
+  .active-elevate-2:active {
+    @apply brightness-90;
+  }
+  
+  .no-default-hover-elevate:hover {
+    @apply brightness-100;
+  }
+  
+  .no-default-active-elevate:active {
+    @apply brightness-100;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
